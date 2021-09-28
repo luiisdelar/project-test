@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+    
+    <div class="row d-flex justify-content-center mt-4">
+        <div class="col-lg-6 col-md-10 col-sm-12 form-group">
+            <div class="card">
+                <div class="card-header">
+                    <h1>User Profile</h1>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Username:<h4> {{userr.username}}</h4></li>
+                      
+                    </ul>
+                    <a href="{% url 'index' %}" class="btn-primary btn">Home</a>
+                    <a href="{% url 'logout' %}" class="btn-primary btn">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+{% endblock %}
+    

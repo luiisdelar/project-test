@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+
+    <div class="container">
+
+        <h1 class="text-center">Home</h1>
+        <h3 class="mt-2">Rooms</h3>
+        {% if rooms %}
+            <div class="row d-flex justify-content-center">
+                <div class="col-4">
+                    <p>Speaker</p>
+                </div>
+                <div class="col-4">
+                    <p>Anonymous user IP</p>
+                </div>
+                <div class="col-4">
+                    <p>Created date</p>
+                </div>
+            </div>    
+            {% for room in rooms %}
+                <div class="row d-flex justify-content-center">
+                    <div class="col-4">
+                        <p>{{room.speaker.user.username}}</p>
+                    </div>
+                    <div class="col-4">
+                        <p>{{room.anonymousUser.ip}}</p>
+                    </div>
+                    <div class="col-4">
+                        <p>{{room.created_date}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="lead">No rooms available</p>
+        {% endif %}
+
+    </div>
+
+{% endblock %}  
